@@ -12,10 +12,10 @@ documentation, servers, clients, tests and much more based on the rich [OpenAPI 
 
 To make sure your end specification is valid, do read the most up-to date official [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification).
 
-## Useage
+## Usage
 
 **swagger-jsdoc** enables you to integrate [Swagger](http://swagger.io)
-using [`JSDoc`](https://jsdoc.app/) comments in your code. Just add `@swagger` on top of your DocBlock and declare the meaning of your code in YAML complying to the OpenAPI specification.
+using [`JSDoc`](https://jsdoc.app/) comments in your code. Just add `@swagger` or `@openapi` on top of your DocBlock and declare the meaning of your code in YAML complying to the OpenAPI specification.
 
 ```ts
 import { swaggerDoc } from "https://deno.land/x/deno_swagger_doc/mod.ts";
@@ -26,14 +26,14 @@ const swaggerDefinition = {
     version: '1.0.0', // Version (required)
     description: 'A sample API', // Description (optional)
   },
-  host: `localhost:8000`, // Host (optional)
+  host: 'localhost:8000', // Host (optional)
   basePath: '/', // Base path (optional)
 };
 
 const options = {
   swaggerDefinition,
   // Path to the API docs
-  // Note that this path is relative to the current directory from which the Node.js is ran, not the application itself.
+  // Note that this path is relative to the current directory from which the Deno is ran, not the application itself.
   apis: ['./example/v2/routes.ts', './example/v2/parameters.yaml'],
 };
 
@@ -47,18 +47,18 @@ app.use(async (context, next) => {
     context.response.body = swaggerSpec
   }else{
     await next();
-  } 
+  }
 });
 ```
 ## Note
 
 Run the App with --unstable
 
-`denon run --allow-net --allow-read  --unstable ./example/v2/app.ts`
+`deno run --allow-net --allow-read  --unstable ./example/v2/app.ts`
 
-If you facing any issue due to TypeScript type checking. Please use the `--no-check` option 
+If you are facing any issue due to TypeScript type checking please use the `--no-check` option
 
-`denon run --no-check --allow-net --allow-read  --unstable ./example/v2/app.ts`
+`deno run --no-check --allow-net --allow-read  --unstable ./example/v2/app.ts`
 
 ## Stay in touch
 
