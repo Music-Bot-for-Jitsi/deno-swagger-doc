@@ -1,5 +1,5 @@
-import jsYaml from 'https://dev.jspm.io/js-yaml';
-import doctrine from 'https://dev.jspm.io/doctrine';
+import jsYaml from 'https://cdn.skypack.dev/js-yaml?dts';
+import doctrine from 'https://cdn.skypack.dev/doctrine?dts';
 
 /**
  * Parse the provided API file content.

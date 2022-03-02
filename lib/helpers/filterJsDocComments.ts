@@ -1,4 +1,4 @@
-import jsYaml from 'https://dev.jspm.io/js-yaml';
+import jsYaml from 'https://cdn.skypack.dev/js-yaml?dts';
 
 
 /**
