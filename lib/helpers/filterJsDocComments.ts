@@ -15,7 +15,7 @@ export function filterJsDocComments(jsDocComments : any) {
     const jsDocComment = jsDocComments[i];
     for (let j = 0; j < jsDocComment.tags.length; j += 1) {
       const tag = jsDocComment.tags[j];
-      if (tag.title === 'swagger') {
+      if (['swagger', 'openapi'].includes(tag.title)) {
         swaggerJsDocComments.push(jsYaml.load(tag.description));
       }
     }
