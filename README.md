@@ -33,7 +33,7 @@ const swaggerDefinition = {
 const options = {
   swaggerDefinition,
   // Path to the API docs
-  // Note that this path is relative to the current directory from which the Deno is ran, not the application itself.
+  // Note that this path is relative to the current directory from which Deno is ran, not the application itself.
   apis: ['./example/v2/routes.ts', './example/v2/parameters.yaml'],
 };
 
