@@ -1,4 +1,4 @@
-import parser from 'https://skypack.dev/swagger-parser?dts';
+import parser from 'https://cdn.skypack.dev/swagger-parser?dts';
 import { hasEmptyProperty } from "./hasEmptyProperty.ts"
 
 /**
